@@ -55,6 +55,7 @@ if (_mode == 2) exitwith {
 	
 	veh = _veh;
 	cargo = _cargo;
+	_cargo allowDamage false;
 	
 	clearMagazineCargoGlobal _cargo;
 	clearWeaponCargoGlobal _cargo;
@@ -224,7 +225,7 @@ if (_mode == 2) exitwith {
 	if (_ai) then {
 		_hcunits = [position _cheli, EAST, _aiunits,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
 		_hcg = group (leader _hcunits);
-		_hcg addWaypoint [position	_cargo, 0];
+		_hcg addWaypoint [position	_cheli, 0];
 		[_hcg, 0] setWaypointType "GUARD";
 		[_hcg, 0] setWaypointBehaviour "AWARE";
 		{
